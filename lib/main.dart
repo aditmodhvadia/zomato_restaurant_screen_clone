@@ -34,24 +34,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-
         title: Text("American Food House"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Header(),
-
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: () {},
         tooltip: 'Increment',
         backgroundColor: Colors.red,
         child: Icon(Icons.add),
@@ -63,28 +59,133 @@ class _MyHomePageState extends State<MyHomePage> {
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text('American Food House', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0)),
+          padding: const EdgeInsets.only(left: 8.0, right: 8.0, top: 4.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('American Food House',
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0)),
+              Expanded(child: Container()),
+              ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                child: Container(
+                  color: Colors.lightGreen,
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Text(
+                      '3.9',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
-        Expanded(child: Container()),
+        Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8.0, top: 4.0),
+              child: Text(
+                'American Food House, Bodakdev, Ahmedabad',
+                style: TextStyle(color: Colors.grey),
+              ),
+            )),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(4.0)),
-            child: Container(
-              color: Colors.lightGreen,
-              child: Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Text('3.9', style: TextStyle(color: Colors.white),),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                'Closed for dineout',
+                style: TextStyle(color: Colors.red),
+              ),
+//              todo: add the centered dot here
+              Padding(
+                padding: const EdgeInsets.only(left: 2.0),
+                child: Icon(
+                  Icons.adjust,
+                  color: Colors.grey,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 2.0),
+                child: Text(
+                  'Opens at 4am',
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              Icon(
+                Icons.keyboard_arrow_down,
+                color: Colors.grey,
+              )
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 8.0),
+          child: Row(
+            children: <Widget>[
+              Text(
+                'Quick Bites - Pizza, American',
+                style: TextStyle(color: Colors.grey),
+              )
+            ],
+          ),
+        ),
+        Row(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Map',
+                style: TextStyle(
+                    color: Colors.green,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.green,
+                    decorationStyle: TextDecorationStyle.dashed),
               ),
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Menu',
+                style: TextStyle(
+                    color: Colors.green,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.green,
+                    decorationStyle: TextDecorationStyle.dashed),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                '463 Reviews',
+                style: TextStyle(
+                    color: Colors.green,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.green,
+                    decorationStyle: TextDecorationStyle.dashed),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                '295 Photos',
+                style: TextStyle(
+                    color: Colors.green,
+                    decoration: TextDecoration.underline,
+                    decorationColor: Colors.green,
+                    decorationStyle: TextDecorationStyle.dashed),
+              ),
+            )
+          ],
         )
       ],
     );
   }
 }
-
