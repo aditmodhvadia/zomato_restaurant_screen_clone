@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/QuickActions.dart';
 
 void main() => runApp(MyApp());
 
@@ -44,6 +45,15 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Header(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Divider(height: 2.0),
+          ),
+          QuickActions(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Divider(height: 2.0),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
